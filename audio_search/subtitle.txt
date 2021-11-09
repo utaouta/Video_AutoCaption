@@ -1,0 +1,151 @@
+1000000 hi welcome this is a quick talk through where necessary on the slides for electric 16 which is the third one on open
+1012991 I think you've got more information is the opening peta.org website
+1018672 thread basics a shared memory for children model etc
+1027526 and reading have a good read of chapter 1 of using and Penelope the next step gives you a recap of the diversions and
+1036502 majority of which were covered in majority of which is what he is on today today basis
+1045479 recap you should know what I'm PMP director beers New you need to use a header file should understand workshare
+1053610 how much data does the song if not go back to previous
+1061741 cupboard Eminem people Regency for sale with the directive pragma OMP
+1067809 the scope is the following block so that's either
+1073878 set of parentheses or single statement or kind of complex statement like a for Loop
+1085854 #matter MP4 is a workshop construct and it divides up
+1092575 the iterations for the for loop across those threads are already exists
+1099234 to have this inside a #metoo OMP parallel
+1105894 combination has pragma OMP parallel for is when you have #moana and parallel immediately
+1112904 followed by hash pragma MP4
+1119914 examples with him before
+1127227 for loop for it to be paralysed Sybil you can't basically jump in or out and the bands have to be fixed
+1138100 tile q&p set the number of threads
+1146889 using the openmp environment variable number threads
+1153221 closest shared node memory locations everyone has read and write access have
+1159950 wrist conditions private is a new memory location is set up
+1166679 thread and pass the fork he read or write to its own
+1174327 this means that private has more overhead and shared were both look so seen the reduction operator
+1184678 let's have a look at why and how we can make open and pay more performers granularity issues loading balance
+1191965 I'm quickly touch on things good for sharing and first touch
+1199252 granularity
+1201488 is it a general term ideally you want a few parallel regions
+1209723 possible and make much use of each and every thread in those parallel regions as much as possible
+1219553 typical examples you see about granularity are when you have two or more for Loops that parallelizable
+1230925 and the kind of naive
+1234597 brooches to make each for loop paralysed by #metoo OMP parallel for combination
+1243686 this will give you two parallel regions so you have extra overheads
+1250166 setting up the second parallel region and potential synchronisation at the end of the first para no region
+1257226 you could do is replicate work if that's possible doesn't lead to race conditions have a single in the sixth sample coarse-grained Harlow region
+1268184 buy #metoo OMP parallel note the beginning and end {
+1274682 the structure of block that then contains
+1278225 two lots of #metoo MP4 and some replicated work setting up M&C
+1286574 less overheads and therefore should be more efficient
+1294287 you can also look how scheduling affects performance we seen this briefly before but we expand this now
+1303581 example result before factorization matrix involved step
+1310895 where
+1313940 the amount of work per iteration varies increases as we go higher iterations net worth
+1321012 the first half the operations on one foot in the other half on another for the example shown on the left
+1328084 total times that take by 15 units
+1334555 can see the total of 21 units to buy that by the two threads so we have available so we should be able to get closer to 10 and a half units
+1343944 or use the schedule static, one clause
+1347724 dinky round-robin assignment of iterations to threads this give this more closely
+1358073 balanced work for thread nine on threads error 1201 stilgoe the slowest
+1365377 which is closer to 10 and 1/2 definitely better than 15 years about 20% quicker
+1372682 a good saving
+1382155 barrier sexy halfway down
+1385683 options for schedule the static that's in
+1390236 and you don't have to put chunksize in but you can put a chunk size in
+1394652 guided auto run time
+1399917 if you do schedule runtime you don't have set up the environment variable OMP schedule
+1407229 another
+1409610 valid
+1411295 expression for schedule such as guided come at 10
+1415044 in that case the chunk size is 10 and the type is guided
+1420511 and think of the options to schedule in two types static
+1426440 going to know the assignment of iterations to threads before en fer the for loop and dynamic working out at runtime
+1435237 static I'm going to equal size blocks roughly on the first thread second thread and so
+1444311 static, in and the block size will put that number of iterations on first read that
+1451720 I can't read that thread to run out of threads get back to the first block on there so much more round robin
+1459129 guided at dynamic in nature so we going to resign iterations to the next available threads
+1467456 dynamic by herself who would take one iteration put on a thread next iteration on another thread that is free and so on all friends become busy
+1478593 Country Estates Ltd regional map size do the same but put those many threads drunk size
+1489730 operations
+1492127 machoke size of threads onto each thread is it becomes free so I drank size of iterations on to threats
+1500742 it's very similar to dynamic part from it with big chunks
+1506597 French become free Wigan smaller chunks
+1511382 this is to try and have some granularity
+1515090 maintain load balance as we hit the end of the operations
+1520772 this case will give you a truck tyres that's the minimum Society operations to hand out
+1526905 exhaust the operation space
+1533038 auto it's another option that's not really use this myself and makes a leave it to the compiler will run through the loops first few times know what goes on and then use the best pattern
+1544862 another element is what happens at the end
+1549092 a construct
+1554342 barriers and synchronisation points within the work chain construct such as home
+1560831 for a price for Loop
+1564020 it is not necessary logically to always have such barrier in which case we use the no way
+1571501 and there be no waiting but it's up to the user to make sure you only uses
+1578982 when it is logically correct
+1584261 let's think of
+1586545 a region with several Loops in it two independent Loops what goes on in the first loop doesn't affect the second there's no reason for the second loop
+1597916 have to wait for every iteration of the first loop to completed
+1602295 in which case can use #man P4 no weight on
+1607740 the decoration of the
+1610779 scared
+1612856 a region the depth of the screen
+1616610 123
+1619065 MP4 loops
+1621904 top coat Green
+1627251 unikkatil goes on the first tulips you can see that's all be set backs and then we sat by the way so they are independent
+1638337 instead of all these implicit barriers using no weight on the first one such that
+1645913 the threads that implement the second for you do not have to wait for every thread to finish from the first for Loop
+1656738 I can't do that between the second and third because of uni use axe and Y in the third loop
+1664911 elements iterations are scheduled to threats
+1670867 explicitly stating it for example we can now see
+1676500 that those situations happening on giving thread to computer
+1684439 Reddit K can only actually get there once and white of both pink beautiful
+1695162 therefore in this case we can have no wait on both the first
+1700592 for loops
+1706381 no way Rudy's remove on the semi-implicit could improve the performance of hard work out sometimes it's very easy to get along so be two more important concepts
+1718320 ready efficient performance and Penelope code for sharing and first touch principal neither of which will be
+1730260 
+1731791 so this is beyond the scope of this course not examinable and it leads when it happens to very bad performance something to avoid
+1743504 happens if you're going to have overlapping cache lines between adjacent threads they're accessing those cashlines in which case cashlines get
+1755217 dirty
+1756753 and need refreshing even though elements I have not actually been updated so it's false sharing one of them or feel free to ask
+1768516 resource safety which is a way of improving performance again
+1774186 on this course but it's something to be aware of so where is Memory placed
+1781266 it's placed by the thread that first touches it
+1786178 if you do any station sequentially and then access those variables in parallel you can have different patterns in parallel it could be some friends are quite a Distance away from the place where that variable has been placed in memory however
+1805528 you got the same pattern for both the initialisation and when you can do the work in parallel and the initialisation will place those elements in the right place when you going to use them later sellable typically be closer to the thread that need some this only works
+1824878 static scheduling you should understand why it probably won't work for dynamic scheduling
+1832265 also some performances begin where the friends actually run so just quickly run through these environment variables II OMP set dynamic to false
+1843889 stops the system dynamically changing the number of threads from the number that you request it
+1851337 we would have happened on the overloaded system will give you less threads in order to try and get more throughput however you be using
+1860156 nights where you can have as many cores and threads so you want to keep the number of threads as that
+1868975 set to the number that you requested o&p number as so that dynamic forces good thing to do
+1877770 read sometimes move between physical cause this could be bad because then you remember is not close to the thread from first touch so we want to
+1887140 ensure that the processes by into the first Core they start on so we do it and people buying = true
+1896511 already wanted to you can actually decide where friends that place to cause that is quite complicated is
+1902947 hardware dependent and we're not going to cover it in this course
+1909384 May
+1911434 also need to set the OMP stack size and you might have played this bit 102k and this ensures you got enough memory
+1922921 per thread so when you can set up new private copies you need more memory and total so something like this helps if you hear a message back
+1934409 talk about is Danny scopes this is good program we split up into functions etc anything up there and be parallel in the main
+1944640 work sharing constructs in a function is called from main for example
+1954871 how many threads you can have remember opening PS3 elements directors environment variable
+1962737 functions each these also can relate to how many friends you're going to get
+1970604 remember that the number in Any Given region that fixes to find out the entry for the number could vary between different regions
+1979656 you could for parallel region have just one through it which would be faster
+1985525 which Elise directive which runtime which environment variable you should be able to know this before we go on to next slide
+1993756 OMP num threads you can set the number then run your code
+1999497 and each colour region what happened at number threats in your kodi could use #na and parallel and then
+2007023 threats to set number of threads you on Peters ins or kind of integer function
+2014550 #won't be parallel if so you don't do this in power if you had enough work for example and he can
+2022429 function OMP set num threads suitable to find the number of threads in the following parallel region
+2030309 environment variable something was set before we run the code
+2035563 parallel is a directive it's something in the code
+2041060 looks like a comment is a directive
+2044480 please set number as a function so it's an open MP run time
+2052275 how many got it's in this an example so that none threads runtime function to determine how many
+2061246 forgot runtime for obvious reasons that's not a pracma law and Environment variable to do this
+2070217 I mean w time with sinister twice see the difference gives you a number seconds
+2076815 leave you with a quick question
+2079624 scope you don't understand this ask me in Ms teams
+2084774 thank you for listening
+2104588 

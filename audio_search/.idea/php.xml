@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="D:/wamp64/apps/phpsysinfo3.3.2/sample/distrotest/Pear" />
+    </include_path>
+  </component>
+</project>
